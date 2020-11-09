@@ -35,18 +35,16 @@
 	<br />
 	kong<input id="kong"/>
 	<br />
-	当前时间
-	<p id="DDD"></p>
 	考试结束时间
 	<input  id="setKsStartDate" />
+	<button onclick="getDate()">获取当前时间</button>
 	<br />
 	<button onclick="test()">作弊！！！</button>
 <p id="ppp"></p>
 	</body>
 	<script>
 
-		setInterval(function() {	
-		var systemDate = "";
+		function getDate(){
 				var myDate = new Date();
 				var year = myDate.getFullYear(); //获取当前年
 				var month = myDate.getMonth() + 1; //获取当前月
@@ -56,8 +54,9 @@
 				var s = myDate.getSeconds();
 				systemDate = year + '-' + getNow(month) + "-" + getNow(date) + " " +
 					getNow(h) + ':' + getNow(m) + ":" + getNow(s);
-					$("#DDD").html(systemDate)
-		}, 1000);
+					$("#setKsStartDate").val(systemDate);
+					
+		}
 		
 		function getNow(s) {
 					return s < 10 ? '0' + s : s;
