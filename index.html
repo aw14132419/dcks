@@ -23,7 +23,17 @@
 
 </b>
 	<br />
-	pc_id<input id="pc_id"/>
+	pc_id<select id="pc_id">
+		<option value="0">请选择</option>
+		<option value="1">专业单词第一批</option>
+		<option value="2">专业单词第二批</option>
+		<option value="11">普通单词第一批</option>
+		<option value="12">普通单词第二批</option>
+		<option value="13">普通单词第三批</option>
+		<option value="14">体验单词</option>
+		<option value="15">专业单词第三批</option>
+		<option value="16">五十音图</option>
+	</select>
 	<br />
 	wj_id<input id="wj_id"/>
 	<br />
@@ -44,6 +54,33 @@
 	</body>
 	<script>
 
+$("#pc_id").change(function(){
+	var pcid = $("#pc_id").val();
+	if(pcid == 1){
+		$("#dui").val(99);
+	}
+	if(pcid == 2){
+		$("#dui").val(90);
+	}
+	if(pcid == 11){
+		$("#dui").val(99);
+	}
+	if(pcid == 12){
+		$("#dui").val(100);
+	}
+	if(pcid == 13){
+		$("#dui").val(100);
+	}
+	if(pcid == 14){
+		$("#dui").val(20);
+	}
+	if(pcid == 15){
+		$("#dui").val(65);
+	}
+	if(pcid == 16){
+		$("#dui").val(71);
+	}
+});
 		function getDate(){
 				var myDate = new Date();
 				var year = myDate.getFullYear(); //获取当前年
